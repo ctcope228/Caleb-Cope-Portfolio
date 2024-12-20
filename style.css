@@ -1,0 +1,126 @@
+html {
+    background-color: #0f1018;
+    color: #fff7eb;
+    font-family: "Readex Pro", sans-serif;
+}
+
+header {
+    height: 150px;
+}
+
+.main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 550px 80px 50px repeat(3, 250px);
+    row-gap: 100px;
+    column-gap: 50px;
+    text-align: left;
+}
+
+@media (max-width: 800px) {
+    .main{display:flex;flex-direction:column;}
+}
+
+p, li {
+    font-size: 18px;
+    font-weight: 300;
+}
+
+.photoblock {
+    grid-column: 2; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 50px;
+    background-color: #cd6300
+}
+
+.photoblock img {
+    flex: 1;
+    max-height: 35vh;
+    margin-top: 30px;
+    border-radius: 40px;
+}
+
+.photoblock h1 {
+    flex: 1;
+    text-transform: uppercase;
+    font-size: 45px;
+}
+
+.summary {
+    display: flex;
+    grid-column: span 2;
+    flex-direction: column;
+    align-items: start;
+    border-radius: 20px;
+}
+
+.summary h1 {
+    font-size: 40px;
+    color:#f5c389
+}
+
+.summary p {
+    font-size: 24px;
+}
+
+#toggle-header {
+    grid-column: 2 / span 2;
+    text-transform: uppercase;
+}
+
+#toggle-header img{
+    height:35px;
+    position: relative;
+    top: 7px;
+    left: 10px;
+}
+
+.main h2 {
+    grid-column: 1 / span 2;
+    text-transform: uppercase;
+} 
+
+.projectimage {
+    grid-column: 1;
+}
+
+.projectimage > img {
+    height: 28vh;
+    width: 42vh;
+    border-radius: 10px;
+}
+
+.projecttext {
+    grid-column: 2;
+}
+
+.projecttext > h3 {
+    font-size: 20px;
+    text-transform: uppercase;
+    color: #f5c389;
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#projects-content {
+    grid-column: 2 / span 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 50px repeat(3, 250px);
+    row-gap: 100px;
+    column-gap: 50px;
+    height: 0;
+    overflow: hidden;
+    transition: height 0.3s ease-out;
+}
